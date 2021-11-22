@@ -3,7 +3,7 @@ import { ProductsContainer,
         ProductsHeading,
         ProductWrapper,
         ProductCard,
-        ProductImg, ProductInfo, ProductTitle, ProductDesc, ProductPrice, ProductBtn  } from './ProductElements';
+        ProductImg, ProductInfo, ProductTitle, ProductDesc, ProductPrice, ProductBtn, ViewMoreBtn  } from './ProductElements';
 const Products = ({heading, data}) => {
     return (
         <ProductsContainer>
@@ -25,6 +25,7 @@ const Products = ({heading, data}) => {
                     })
                 }
             </ProductWrapper>
+            <ViewMoreBtn to='/pizzas'>View More...</ViewMoreBtn>
         </ProductsContainer>
     )
 }

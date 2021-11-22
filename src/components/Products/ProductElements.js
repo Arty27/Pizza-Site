@@ -1,11 +1,13 @@
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 export const ProductsContainer=styled.div`
     /* width: 100%; */
     min-height: 100vh;
     padding: 5rem calc((100vw - 1350px) /2);
     background: #150f0f;
     color:#fff;
+    align-items: center;
+    text-align:end;
 `;
 export const ProductWrapper=styled.div`
     display: flex;
@@ -60,5 +62,16 @@ export const ProductBtn=styled.button`
         transition: 0.2s ease-in-out;
         cursor: pointer;
         color: #fff;
+    }
+`;
+export const ViewMoreBtn=styled(Link)`
+    font-size: 1rem;
+    padding: 1rem 4rem;
+    border: none;
+    text-decoration: none;
+    color: #fff;
+    transition: all 1s ease-in-out;
+    &:hover{
+        text-decoration: underline;
     }
 `;
