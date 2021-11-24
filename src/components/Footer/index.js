@@ -7,7 +7,7 @@ const Footer = () => {
             <FooterWrap>
                 <SocialMedia>
                     <SocialMediaWrap>
-                        <SocialLogo to='/'>Pizza</SocialLogo>
+                        <SocialLogo to='/'>Pizzerui</SocialLogo>
                         <SocialIcons>
                             <SocialIconLink to="/" target="_blank" aira-label="Facebook" rel="noopener nonreferrer"><FaFacebook/></SocialIconLink>
                             <SocialIconLink to="/" target="_blank" aira-label="Instagram" rel="noopener nonreferrer"><FaInstagram/></SocialIconLink>

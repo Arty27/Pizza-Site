@@ -1,8 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Img1 from '../img/pizza3.jpg';
-import Img2 from '../img/pizza2.jpg';
-import { ProductData } from '../components/Products/data';
+import { ProductDataThree } from '../components/Products/data';
+import { FaHandsWash, FaCheckDouble } from 'react-icons/fa';
+import { GiFireplace } from 'react-icons/gi';
+import { BiFoodTag } from 'react-icons/bi';
 
 const HeroWrapper=styled.div`
     height: 300px;
@@ -31,12 +33,16 @@ const ProductsContainer=styled.div`
 `;
 const ProductCard=styled.div`
     display: flex;
-    flex-direction: row-reverse;
+    border: 1px solid white;
     box-shadow:8px 8px #fdc500;
+    margin-bottom: 2rem;
+    flex-direction:row;
+
     @media screen and (max-width: 780px) {
         flex-direction: column;
   }
 `;
+
 const ProductImg=styled.img`
     height: 300px;
     min-width: 300px;
@@ -45,7 +51,20 @@ const ProductImg=styled.img`
 `;
 const ProductDesc=styled.div`
     width: 100%;
+    position: relative;
     padding: 1rem 1rem;
+`;
+const ProductBtns=styled.div`
+    display: flex;
+    padding: 1rem;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    justify-content: space-between;
+    @media screen and (max-width: 780px) {
+        position: relative;
+  }
 `;
 const ProductTitle=styled.h2`
     font-size: clamp(2rem, 2.5vw, 3rem);
@@ -54,10 +73,30 @@ const ProductInfo=styled.p`
     font-size: 1.25rem;
     margin-bottom: 1rem;
 `;
-const ProductBtns=styled.div`
+const ProductFeatures=styled.div`
+    font-family: sans-serif;
+    font-style: italic;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
 `;
+const margins=css`
+    margin-right: 10px;
+`;
+const Hand=styled(FaHandsWash)`
+    font-size: 1.5rem;
+    ${margins}
+`;
+const Fireplace=styled(GiFireplace)`
+    font-size: 1.5rem;
+    ${margins}
+`;
+const Double=styled(FaCheckDouble)`
+    font-size: 1.5rem;
+    ${margins}
+    color: white;
+`;
+
 const ProductPrice=styled.p`
     font-size: 2rem;
 `;
@@ -84,18 +123,25 @@ const Pizzas = () => {
             </HeroTitle>
             </HeroWrapper>
             <ProductsContainer>
-                <ProductCard>
-                    <ProductImg src={Img2} />
-                    <ProductDesc>
-                        <ProductTitle>Supreme Pizza</ProductTitle>
-                        <ProductInfo> White pizza with garlic infused olive oil, goat cheese, fresh mozzarella fior di latte,
-                                    prosciutto fired off then topped with arugula and shaved parmesan. </ProductInfo>
-                        <ProductBtns>
-                            <ProductPrice>$19.9</ProductPrice>
-                            <ProductBtn>Add to Cart</ProductBtn>
-                        </ProductBtns>
-                    </ProductDesc>
-                </ProductCard>
+                {
+                    ProductDataThree.map((pizza,index)=>(
+                        <ProductCard style={{flexDirection:index%2===0?'row':'row-reverse'}} >
+                            <ProductImg src={pizza.img} alt={pizza.alt} />
+                            <ProductDesc>
+                                <ProductTitle>{pizza.name}</ProductTitle>
+                                <ProductInfo> {pizza.desc}
+                                </ProductInfo>
+                                <ProductFeatures>
+                                    <Hand/> Hand Tossed &nbsp;&nbsp; <Fireplace/> Fire Baked &nbsp;&nbsp; <Double/> 2x Toppings
+                                </ProductFeatures>
+                                <ProductBtns>
+                                    <ProductPrice>{pizza.price}</ProductPrice>
+                                    <ProductBtn>{pizza.button}</ProductBtn>
+                                </ProductBtns>
+                            </ProductDesc>
+                        </ProductCard>
+                    ))
+                }
             </ProductsContainer>
        </>
     )

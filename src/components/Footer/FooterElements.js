@@ -34,6 +34,7 @@ export const SocialMediaWrap = styled.div`
 export const SocialLogo = styled(Link)`
   color: #fff;
   justify-self: start;
+  font-family: 'Pacifico', cursive;
   cursor: pointer;
   text-decoration: none;
   font-size: 1.5rem;

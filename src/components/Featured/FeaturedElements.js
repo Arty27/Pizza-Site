@@ -7,6 +7,8 @@ export const FeatureContainer=styled.div`
     max-height: 500px;
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -5,7 +5,7 @@ export const Nav=styled.nav`
     background: ${({bgcolor})=>(bgcolor?'#e31827':'transperent')};
     height: 80px;
     display: flex;
-    justify-content: center;
+    padding: 15px;
     font-weight: 700;
     position: fixed;
     width: 100%;
@@ -14,7 +14,9 @@ export const Nav=styled.nav`
 export const NavLink=styled(Link)`
     color:#fff;
     font-size: 2rem;
+    font-family: 'Pacifico', cursive;
     display: flex;
+    margin-left: 1rem;
     align-items: center;
     text-decoration: none;
     cursor: pointer;

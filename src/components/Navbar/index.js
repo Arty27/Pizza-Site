@@ -14,7 +14,7 @@ const Navbar = ({toggle}) => {
     window.addEventListener('scroll',changeBg)
     return (
         <Nav bgcolor={bgcolor}>
-            <NavLink to='/'>Pizza</NavLink>
+            <NavLink to='/'>Pizzerui</NavLink>
             <NavIcon onClick={toggle}>
                 <p>Menu</p>
                 <Bars/>
