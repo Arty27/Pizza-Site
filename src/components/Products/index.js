@@ -16,7 +16,7 @@ const Products = ({heading, data}) => {
                                 <ProductImg src={product.img} alt={product.alt}/>
                                 <ProductInfo>
                                     <ProductTitle>{product.name}</ProductTitle>
-                                    <ProductDesc>{product.desc}</ProductDesc>
+                                    <ProductDesc>{product.desc.length>76?product.desc.substring(0,73)+"...":product.desc}</ProductDesc>
                                     <ProductPrice>{product.price}</ProductPrice>
                                     <ProductBtn>{product.button}</ProductBtn>
                                 </ProductInfo>
